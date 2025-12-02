@@ -53,9 +53,9 @@ setup_bot() {
         echo -e "${green}Node.js is already installed, skipping...${neutral}"
     fi
 
-   rm -rf /root/BotZiVPN
+   rm -rf /root/BotZIVPN
 
-    if [ ! -f /root/BotZiVPN/app.js ]; then
+    if [ ! -f /root/BotZIVPN/app.js ]; then
         git clone https://github.com/myridwan/BotZIVPN.git /root/BotZIVPN
     fi
 apt install jq -y
@@ -118,7 +118,7 @@ server_app() {
     done
 merchantid="NONE"
 apikey="NONE"
-    rm -f /root/BotZiVPN/.vars.json
+    rm -f /root/BotZIVPN/.vars.json
     echo "{
   \"BOT_TOKEN\": \"$token\",
   \"USER_ID\": \"$adminid\",
@@ -128,9 +128,9 @@ apikey="NONE"
   \"DATA_QRIS\": \"$dataqris\",
   \"MERCHANT_ID\": \"$merchantid\",
   \"API_KEY\": \"$apikey\"
-}" >/root/BotZiVPN/.vars.json
+}" >/root/BotZIVPN/.vars.json
 
-cd /root/BotZiVPN
+cd /root/BotZIVPN
 pm2 start ecosystem.config.js
 pm2 startup
 pm2 save
@@ -141,8 +141,8 @@ cat >/usr/bin/backup_sellzivpn <<'EOF'
 # File: /usr/bin/backup_sellzivpn
 # Pastikan chmod +x /usr/bin/backup_sellzivpn
 
-VARS_FILE="/root/BotZiVPN/.vars.json"
-DB_FOLDER="/root/BotZiVPN"
+VARS_FILE="/root/BotZIVPN/.vars.json"
+DB_FOLDER="/root/BotZIVPN"
 
 # Cek file .vars.json
 if [ ! -f "$VARS_FILE" ]; then
